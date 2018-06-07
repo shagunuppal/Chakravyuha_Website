@@ -1,0 +1,446 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='dashboard.css')}}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Chakravyuha | Esya 2017</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ url_for('xy') }}">Home</a></li>
+            <li><a href="{{ url_for('qa') }}">Questions</a></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="{{ url_for('qa') }}">Questions</a></li>
+          </ul>
+          
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Welcome, {{ name }}</h1>
+          <h2 class="sub-header">Your Score : {{ scores }}
+          
+          <!--h2 class="sub-header">
+          </h2-->
+          <div class="table-responsive" style="font-weight: bold; font-size: 20px">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Question Number</th>
+                  <th>Status</th>
+                  <th>Points</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>
+                   {% if ques1==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques1==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques1==1 %}
+                    5
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>
+                   {% if ques2==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques2==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques2==1 %}
+                    5
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>
+                  {% if ques3==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques3==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques3==1 %}
+                    5
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>
+                    {% if ques4==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques4==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques4==1 %}
+                    5
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>
+                    {% if ques5==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques5==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques5==1 %}
+                    5
+                    {% else %}
+                    0                 
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>
+                    {% if ques6==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques6==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques6==1 %}
+                    5
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>
+                    {% if ques7==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques7==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques7==1 %}
+                    5
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>
+                    {% if ques8==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques8==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques8==1 %}
+                    5
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>
+                    {% if ques9==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques9==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques9==1 %}
+                    10
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>
+                    {% if ques10==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques10==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques10==1 %}
+                    10
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>
+                    {% if ques11==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques11==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques11==1 %}
+                    10
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>
+                    {% if ques12==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques12==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques12==1 %}
+                    10
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>13</td>
+                  <td>
+                    {% if ques13==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques13==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques13==1 %}
+                    10
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>14</td>
+                  <td>
+                    {% if ques14==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques14==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques14==1 %}
+                    10
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>15</td>
+                  <td>
+                    {% if ques15==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques15==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques15==1 %}
+                    10
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>16</td>
+                  <td>
+                    {% if ques16==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques16==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques16==1 %}
+                    15
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>17</td>
+                  <td>
+                    {% if ques17==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques17==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques17==1 %}
+                    15
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>18</td>
+                  <td>
+                    {% if ques18==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques18==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques18==1 %}
+                    15
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>19</td>
+                  <td>
+                    {% if ques19==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques19==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques19==1 %}
+                    15
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>20</td>
+                  <td>
+                    {% if ques20==1 %}
+                   <font color="green">Correct Answer</font>
+                   {% elif ques20==-1 %}
+                   <font color="red">Wrong Answer</font>
+                   {% else %}
+                   Not Yet Attempted
+                   {% endif %}
+                  </td>
+                  <td>
+                    {% if ques20==1 %}
+                    15
+                    {% else %}
+                    0
+                    {% endif %}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+
+<html class="no-js"> 
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>CHAKRAVYUHA | ESYA 2017</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="{{url_for('static', filename='animate.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='flexslider.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='icomoon.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='bootstrap.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='style_front.css')}}">
+	
+	<script src="{{url_for('static', filename='modernizr-2.6.2.min.js')}}"></script>
+	</head>
+	<body>
+	
+	<div id="fh5co-header">
+		<div class="container">
+			<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+			<div id="fh5co-logo">
+				<a href="#">CHAKRAVYUHA<span>.</span></a>
+			</div>
+			<nav id="fh5co-main-nav">
+				<ul>
+					<li><a href="#" data-nav-section="home">Home</a></li>
+					<li><a href="#" data-nav-section="portfolio">About</a></li>
+					<li><a href="#" data-nav-section="about">Rules</a></li>
+					<!--li><a href="#" data-nav-section="contact">Event Heads</a></li-->
+					<!--li><a href="{{ url_for('signup') }}">Login</a></li>
+					<li><a href="blank.html">Go to Questions</a></li-->
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<div id="fh5co-main">
+		<div class="fh5co-overlay-mobile"></div>
+		<div id="fh5co-home" class="js-fullheight" data-section="home">
+
+			<div class="flexslider">
+				
+				<div class="fh5co-text">
+					<div class="container">
+						<div class="row text-center">
+							<h1 class="animate-box"><font color="white">CHAKRAVYUHA | ESYA 2017</font></h1>
+							<div class="fh5co-go animate-box">
+								{% if not current_user.is_authenticated %}
+								<span><a href="{{ url_for('signup') }}"><font size="4px">CLICK HERE TO LOGIN</font></a></span>
+								{% endif %}
+								<span><a href="{{ url_for('qa') }}"><font size="4px">GO TO QUESTIONS</font></a></span>
+								<span><a href="{{ url_for('dashboard') }}"><font size="4px">GO TO DASHBOARD</font></a></span>
+								
+								<a href="#" class="js-fh5co-next">
+									More Details
+									<span><i class="icon-arrow-down2"></i></span>
+								</a>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			  	<ul class="slides">
+			   		<!--li style="background-image: url('slide_2.jpg');" data-stellar-background-ratio="0.5"></li>
+					<li style="background-image: url(slide_1.jpg);" data-stellar-background-ratio="0.5"></li>
+					<li style="background-image: url({{'images/'+'slide_3.jpg'}});" data-stellar-background-ratio="0.5"></li-->
+					<li style = "background-image : url('/static/images/back.jpg');" data-stellar-background-ratio="0.5"></li>
+					<li style = "background-image : url('/static/images/back.jpg');" data-stellar-background-ratio="0.5"></li>
+					<li style = "background-image : url('/static/images/back.jpg');" data-stellar-background-ratio="0.5"></li>
+					
+			  	</ul>
+
+			</div>
+		</div>
+
+		<div id="fh5co-portfolio" data-section="portfolio">
+			<div class="container">
+				<div class="row r-pb">
+					<div class="col-md-8 col-md-offset-2 text-center section-heading">
+						<p class="fh5co-lead animate-box">It’s all about clues and conundrums. Yes, it is Chakravyuha, the online hunt for cryptic clues. It consists of multiple levels, each testing your ability to put your mind to finding and cracking clues. With each right answer, you get one step deeper into the problem solving maze, and ultimately reach the destiny!</p>
+					</div>
+				</div>
+				
+
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="{{ url_for('static', filename = 'images/abcd.jpg') }}"  class="img-responsive" width="500px">
+
+							<a href="https://drive.google.com/file/d/0B5-fDoB2jCuWcGZ0NjY0U2xpa3c/view?usp=sharing" class="transition">
+								<div>
+									
+									<h2 class="fh5co-title">LAST YEAR QUESTION BANK</h2>
+									<span class="fh5co-meta">Here is a LINK to last year's question bank. Have a look at the question bank of Chakravyuha 2016 so as to get a clear idea of how this year's questions are going to be.</span>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="{{ url_for('static', filename = 'img5.jpg') }}" class="img-responsive" width="500px">
+							<a href="" class="transition">
+								<div>
+									<h2 class="fh5co-title">PRIZES</h2>
+									<span class="fh5co-meta">Attractive Cool Cash as well as Inkind Prizes to be won, worth 30,000.<br> Prizes for top 5 scorers of the contest.</span>
+									
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-6 col-xxs-12 animate-box">
+						<div class="img-grid">
+							<img src="{{ url_for('static', filename = 'images/img6.jpg') }}"" class="img-responsive" width="500px">
+							<a href="" class="transition">
+								<div>
+									<h2 class="fh5co-title">BONUS AWARDS</h2>
+									<span class="fh5co-meta">Separate prizes for Bonus Questions.<br>Some additional prizes for Quickest Question Solver and the Perfectionist for the one who answers the questions in least number of attempts.(Participants answering a minimum of 5 questions will be eligible for prizes)</span>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					
+
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-about" data-section="about">
+			<div class="container">
+				<div class="row r-pb">
+					<div class="col-md-8 col-md-offset-2 text-center section-heading animate-box">
+						<h1 class="animate-box"><font size="10px" color="white">Rules of the Contest</font></h1>
+						<p class="fh5co-lead">
+							<ul>
+							<li align="left">To participate, sign up at the <b>Chakravyuha Website</b>, the answers are be submitted here itself. The link to the website will be provided soon. Only individual participation is allowed.</li><br>
+							<li align="left">The contest is held online and participants anywhere with a relevant email ID and currently enrolled in any kind of an educational organisation and pursuing any career can take part.</li><br>
+							<li align="left">The contest lasts for a duration of <b>4 DAYS</b> and there are a total of <b>20 LEVELS</b> with increasing levels of difficulty.</li><br>
+							<li align="left">The one who correctly answers all the questions or finishes with the maximum score at the end is declared as the winner.</li><br>
+							<li align="left">Each question will be provided with a score which will automatically be added to the participant’s score if he/she answers the question correctly.</li><br>
+							<li align="left">There will be some <b>Bonus Questions</b> for which participants answering them correctly will be eligible for cool prizes. The bonus questions will be uploaded on the FB page of the event, so make sure that you click going to stay tuned to the latest updates. The answers to them have to be submitted using the google form that we roll out once the questions are uploaded.</li><br>
+							<li align="left">The <b>first question</b> is a trial question and is just for the purpose of familarising you with the format of the submission of answers on the website. So, whatever you submit you will be awarded 5 points.</li><br>
+							<li align="left">The participants are provided with <b>last years question bank</b> for Chakravyuha 2016, for them to practise and have an idea about how are the questions going to be.</li><br>
+							<li align="left">The organizer’s decision is final and binding, they have the right to change rules as they deem fit and have the right to disqualify any participant if they break any rule.</li><br>
+							</ul>
+						</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		
+
+		<div id="fh5co-contact" data-section="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center section-heading">
+						<h2 class="fh5co-section-title animate-box"><font size="20px">EVENT HEADS</font></h2><br><br>
+						<p class="fh5co-lead animate-box">SHAGUN UPPAL &nbsp| &nbsp SARTHAK BHAGAT &nbsp| &nbsp ANUSHIKA VERMA</p>
+
+						<font size-"12px"> shagun16088@iiitd.ac.in &nbsp| &nbsp sarthak16189@iiitd.ac.in &nbsp| &nbsp anushika16015@iiitd.ac.in</font><br><BR><br><br>
+						
+						<p class="animate-box"><a href="https://www.facebook.com/events/447532492262189/" target="_blank" class="btn btn-primary btn-lg">VISIT FACEBOOK PAGE</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="fh5co-contact" data-section="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center section-heading">
+						<h2 class="fh5co-section-title animate-box"><font size="20px">OUR SPONSORS</font></h2><br><br>
+						<p class="fh5co-lead animate-box">PUNJAB NATIONAL BANK</p>
+
+						<img src="/static/images/pnb.jpg" width="500px">
+
+						<br>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="fh5co-testimony" style="background-image: url('/static/images/slide_1.jpg');" data-stellar-background-ratio="0.5">
+			<div class="fh5co-overlay"></div>
+			<div class="container">
+				<div class="row">
+					<div class="flexslider animate-box">
+							<ul class="slides">
+								<li>
+									<blockquote>
+										<p><font size="8px">&ldquo;
+										As you progress through the different stages of this mysterious puzzle, the mystery unfolds and the complexity progressively increases. So, the deeper you dig, the closer you reach to your destination.<br>
+										Every lock is a key to another lock.
+										&rdquo;</font> </p>
+									</blockquote>
+								</li>
+								<li>
+									<blockquote>
+										<p>&ldquo;
+										Chakravyuha is an online cryptic hunt, solely based on your ability to explore answer to mind-boggling questions, that not only test your ability to think deep into slight inklings but also find your way out of these crafty puzzles using the ultimate source : GOOGLE. Your ability to google and find out of solutions for the problems determines how far you reach in the contest.
+										&rdquo; </p>
+									</blockquote>
+								</li>
+								<li>
+									<blockquote>
+										<p>&ldquo;
+										It’s all about clues and conundrums. Yes, it is Chakravyuha, the online hunt for cryptic clues.It consists of multiple levels, each testing your ability to put your mind to finding and cracking clues. With each right answer, you get one step deeper into the problem solving maze, and ultimately reach the destiny!
+										&rdquo; </p>
+									</blockquote>
+								</li>
+								
+								
+							</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		
+	</div> 
+
+	
+	<center>All Rights Reserved | Chakravyuha | Esya 2017</center>
+
+	<script src="{{url_for('static', filename='jquery.min.js')}}"></script>
+	<script src="{{url_for('static', filename='jquery.easing.1.3.js')}}"></script>
+	<script src="{{url_for('static', filename='jquery.waypoints.min.js')}}"></script>
+	<script src="{{url_for('static', filename='jquery.stellar.min.js')}}"></script>
+	<script src="{{url_for('static', filename='jquery.flexslider-min.js')}}"></script>
+	<script src="{{url_for('static', filename='main1.js')}}"></script>
+
+
+	</body>
+</html>
+
